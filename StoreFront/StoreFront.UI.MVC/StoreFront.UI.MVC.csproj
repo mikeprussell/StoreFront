@@ -184,7 +184,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="configs\AppSecretKeys.xml" />
+    <None Include="configs\AppSecretKeys.config" />
     <Content Include="Content\assets\favicon.ico" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\js\scripts.js" />

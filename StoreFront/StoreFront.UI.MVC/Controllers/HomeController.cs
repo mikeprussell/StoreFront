@@ -32,7 +32,7 @@ namespace StoreFront.UI.MVC.Controllers
         [HttpPost]
         public ActionResult Contact(ContactViewModel cvm)
         {
-            string body = $"Message received from MVC2 Secured. From {cvm.Name} - Subject {cvm.Subject}<br />Message:" +
+            string body = $"Message received from PowKit. From {cvm.Name} - Subject {cvm.Subject}<br />Message:" +
                 $"{cvm.Message}";
 
             string emailUser = WebConfigurationManager.AppSettings["EmailUser"];
@@ -40,10 +40,8 @@ namespace StoreFront.UI.MVC.Controllers
             string emailServer = WebConfigurationManager.AppSettings["EmailServer"];
             string emailPassword = WebConfigurationManager.AppSettings["EmailPassword"];
 
-
             MailMessage msg = new MailMessage(emailUser, emailToAddress, "Message from your contact form", body);
 
-            msg.CC.Add("mikeprussell@hotmail.com");
             msg.IsBodyHtml = true;
 
             SmtpClient client = new SmtpClient(emailServer);
