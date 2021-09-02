@@ -62,6 +62,7 @@
     <Compile Include="Employee.cs">
       <DependentUpon>StoreFrontEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Metadata\StoreFrontMetadata.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>StoreFrontEntityModel.tt</DependentUpon>
     </Compile>
@@ -113,8 +114,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StoreFront.DATA.EF.Metadata\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

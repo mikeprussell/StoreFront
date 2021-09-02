@@ -259,6 +259,7 @@
     <Content Include="Views\Account\DisplayEmail.cshtml" />
     <Content Include="Views\Shared\_OriginalLayout.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
