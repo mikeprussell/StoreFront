@@ -190,6 +190,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="_Archive\productindex.html" />
     <None Include="configs\AppSecretKeys.config" />
     <Content Include="Content\assets\favicon.ico" />
     <Content Include="Content\css\custom.css" />
