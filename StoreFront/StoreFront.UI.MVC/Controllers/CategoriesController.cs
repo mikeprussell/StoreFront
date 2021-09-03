@@ -14,6 +14,7 @@ namespace StoreFront.UI.MVC.Controllers
     {
         private StoreFrontEntities db = new StoreFrontEntities();
 
+        [Authorize]
         // GET: Categories
         public ActionResult Index()
         {
@@ -35,6 +36,7 @@ namespace StoreFront.UI.MVC.Controllers
             return View(category);
         }
 
+        [Authorize(Roles = "Admin, Employee")]
         // GET: Categories/Create
         public ActionResult Create()
         {

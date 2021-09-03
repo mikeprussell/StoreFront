@@ -26,46 +26,65 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("AllProducts","Home")">All Products</a></li>
                             <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("IndividualProduct","Home")">Popular Item</a></li>
                             <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="@Url.Action("Contact","Home")">Contact</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Functions</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="@Url.Action("Index", "UsersAdmin")">User</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
-                        </ul>
-                    </li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Company Portal</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="dropdown-item"><a class="nav-link" href="@Url.Action("Index", "Customer")">Customers</a></li>
 
-                    @Html.Partial("_LoginPartial")
+                                <!-- Inventory Navigation-->
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item">Inventory</a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="@Url.Action("Index", "Category")">Categories</a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="@Url.Action("Index", "Department")">Departments</a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="@Url.Action("Index", "Product")">Products</a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="@Url.Action("Index", "ProductsStatus")">Product Status</a></li>
 
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                </form>
-            </div>
+                                <!-- Human Resources Navigation-->
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item">Human Resources</a></li>
+                                <li class="dropdown-item"><a class="nav-link" href="@Url.Action("Index", "Employee")">Employees</a></li>
+                            </ul>
+                        </li>
+                    }
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Functions</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "UsersAdmin")">User</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
+                            </ul>
+                        </li>
+                    }
+
+                        @Html.Partial("_LoginPartial")
+
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+</div>
         </div>
     </nav>
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">PowKit</p>
-            </div>
-        </div>
-    </header>
+
     <main>
         @RenderBody()
     </main>
+
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>

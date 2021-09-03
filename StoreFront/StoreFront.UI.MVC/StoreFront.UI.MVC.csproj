@@ -298,6 +298,8 @@
     <Content Include="Views\ProductStatus\Details.cshtml" />
     <Content Include="Views\ProductStatus\Edit.cshtml" />
     <Content Include="Views\ProductStatus\Index.cshtml" />
+    <Content Include="Views\Home\IndividualProduct.cshtml" />
+    <Content Include="Views\Home\AllProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -351,4 +351,7 @@ MigrationBackup/
 
 # Prevent Sensitive data from being submitted
 /StoreFront.UI.MVC/configs
+/configs
+configs/
+configs
 
