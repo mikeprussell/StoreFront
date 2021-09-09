@@ -150,7 +150,7 @@ namespace StoreFront.DATA.EF.Metadata
     }
 
     [MetadataType(typeof(ProductMetadata))]
-    public partial class Something
+    public partial class Product
     {
 
     }
